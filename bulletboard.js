@@ -59,3 +59,7 @@ function newElement() {
     }
   }
 }
+
+app.set('views', 'board.ejs/views');
+app.set('view engine', 'ejs');
+
