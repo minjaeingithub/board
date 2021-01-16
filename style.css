@@ -1,13 +1,16 @@
+body {
+  margin: 0;
+}
 
 #greeting{
   color: #fff3e6;
   padding: 10px;
-  position: absolute;
+
   text-align: center;
   /*transform: rotateY(180deg);*/
   left:50%;
-  width: 180px;
-  height: 30px;
+  
+  
   font-weight: bold;
   font-size: 30px;
   float: inherit;
@@ -21,27 +24,29 @@
   color: #c1a1d3;
 }
 
+.todoList {
+  
+  z-index: 3;
+  
+}
+
 #intro {
-  position: absolute;
   color: #fff3e6;
   text-align: center;
   font-size: 30px;
   font-weight: bold;
   height: 80px;
-  top: 50%;
-  left: 58%;
-  transform: translate( -50%, -50% );
   padding: 10px;
-  z-index: 3;
+  
 }
 
-.bg {
+.topDiv {
 background-image: url(background.jpg);
  height: 300vh;
  position: relative;
  background-repeat: repeat;
  background-size: cover;
- z-index: 1;
+ z-index: 0;
 }
 
 /* Include the padding and border in an element's total width and height */
