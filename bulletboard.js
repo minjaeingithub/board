@@ -1,16 +1,14 @@
-  ///후버기능 via js
-  ///document.getElementById("greeting").onmouseover = function() {mouseOver()};
-  ///document.getElementById("greeting").onmouseout = function() {mouseOut()};
+/// 후버기능 via js
+console.log("bulletboard loaded")
+document.getElementById("greeting").onmouseover = function() {mouseOver()};
+document.getElementById("greeting").onmouseout = function() {mouseOut()};
+function mouseOver() {
+document.getElementById("greeting").style.color = "#1A508B";}
+function mouseOut() {
+document.getElementById("greeting").style.color = "#c1a1d3";}
 
-///function mouseOver() {
-  ///document.getElementById("greeting").style.color = "#1A508B";
-}
 
-///function mouseOut() {
-  ///document.getElementById("greeting").style.color = "#c1a1d3";
-}
-
-///function myFunction() {
+function myFunction() {
   var x = document.createElement("INPUT");
   x.setAttribute("type", "text");
   x.setAttribute("value", "What I Should DO");
@@ -18,11 +16,12 @@
   x.setAttribute("")
 }
 
-///function myFunction() {
+function myFunction() {
   var x = document.createElement("INPUT");
   x.setAttribute("type", "submit");
   document.body.appendChild(x);
 }
+
 
 var myNodelist = document.getElementsByTagName("LI");
 var i;

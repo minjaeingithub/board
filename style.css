@@ -4,7 +4,7 @@
   padding: 10px;
   position: absolute;
   text-align: center;
-  //transform: rotateY(180deg);
+  /*transform: rotateY(180deg);*/
   left:50%;
   width: 180px;
   height: 30px;
@@ -34,8 +34,9 @@
   padding: 10px;
   z-index: 3;
 }
+
 .bg {
-background-image: url(/bulletboard/background.jpg);
+background-image: url(background.jpg);
  height: 300vh;
  position: relative;
  background-repeat: repeat;
