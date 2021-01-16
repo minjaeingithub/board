@@ -8,15 +8,37 @@
   <div class="todoList">
     <div id="myDIV" class="header">
       <h2>My To Do List</h2>
-      <input type="text" id="myInput" placeholder="내가 할 일은?" />
-      <span onclick="newElement()" class="addBtn">Add</span>
-    </div>
+      
+      <form class="item" action="/" method="post">
+        <input
+          type="text"
+          name="newItem"
+          id="myInput"
+          placeholder="내가 할 일은?"
+          autocomplete="off"
+        />
+        <button type="submit" name="list" class="addBtn">Add</ㅠ>
+      </form>
 
+      
+    </div>
     <ul id="myUL">
-      <li>1</li>
-      <li class="checked">2</li>
-      <li>3</li>
-      <li>4</li>
+      <%newListItems.forEach(function(item){ %>
+      <li>
+        <form action="/delete" method="post">
+          <div class="item">
+            <input
+            class="input"
+              type="checkbox"
+              name="checkbox"
+              value="<%= item._id %>"
+              onChange="this.form.submit()"
+            />
+            <p><%= item.name %></p>
+          </div>
+        </form>
+      </li>
+      <%})%>
     </ul>
   </div>
 </div>

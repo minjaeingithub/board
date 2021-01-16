@@ -17,8 +17,15 @@
       <div class="todoList">
         <div id="myDIV" class="header">
           <h2>My To Do List</h2>
-          <input type="text" id="myInput" placeholder="내가 할 일은?" />
-          <span onclick="newElement()" class="addBtn">Add</span>
+          <form class="item" action="/" method="post">
+            <input
+              type="text"
+              name="newItem"
+              id="myInput" placeholder="내가 할 일은?"
+              autocomplete="off"
+            />
+            <button class="addBtn" type="submit" name="list">+</button>
+          </form>
         </div>
 
         <ul id="myUL">
