@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="crown.png">
+    <link rel="stylesheet" href="style.css">
+    <title>MY LITTLE BULLETBOARD</title>
+  </head>
+
+  <body>
+    <div onmouseover="rotateYDIV()" id="greeting">Welcome to my little priceless Bulletboard</div>
+    <div class="backgroundJpg">
+     <img class="bg" src="background.jpg">
+   </div>
+
+   <p id="intro">I will try CRUD via "To do List". </p>
+
+  <div id="myDIV" class="header">
+  <h2>My To Do List</h2>
+    <input type="text" id="myInput" placeholder="내가 할 일은?">
+    <span onclick="newElement()" class="addBtn">Add</span>
+  </div>
+
+  <ul id="myUL">
+  <li>1</li>
+  <li class="checked">2</li>
+  <li>3</li>
+  <li>4</li>
+  </ul>
+
+  <script src="/bulletboard/bulletboard.js" charset="utf-8"></script>
+  </body>
+
+</html>
