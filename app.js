@@ -13,13 +13,14 @@ app.use(express.static("public"));
 mongoose.connect("mongodb://localhost:27017/todolistDB", {
   useNewUrlParser: true,
 });
-
+/*스키마 선언*/
 const itemsSchema = {
   name: String,
 };
-
+/*아이템스키마를 몬구스모델에 복사*/    
 const Item = mongoose.model("item", itemsSchema);
 
+/*구현하려는 기능 함수 전 변수(3개) 설정*/
 const item1 = new Item({
   name: "Welcome to your todolist",
 });
@@ -34,6 +35,7 @@ const item3 = new Item({
 
 const defaultItems = [item1, item2, item3];
 
+//{} 모르겠씀, 함수 내용: error 구분
 app.get("/", function (req, res) {
   Item.find({}, (err, foundItems) => {
     if (foundItems.length === 0) {
@@ -44,8 +46,9 @@ app.get("/", function (req, res) {
           console.log("Success");
         }
       });
+      //성공하면 board.js(디폴트 화면)로 보내기
       res.redirect("/");
-    } else {
+    } else { //투데이??
       res.render("board", { listTitle: "Today", newListItems: foundItems });
     }
     if (err) {
@@ -55,7 +58,7 @@ app.get("/", function (req, res) {
     }
   });
 });
-
+//data에 서브밋!!!!! create
 app.post("/", function (req, res) {
   const itemName = req.body.newItem;
 
@@ -63,24 +66,24 @@ app.post("/", function (req, res) {
 
   item.save();
 
-  res.redirect("/");
+  res.redirect("/"); //db에 세이브하고 원래대로 respond
 });
-
+//check하면 딜리트 페이지로 보낸다!
 app.post("/delete", function (req, res) {
-  const checkedItemID = req.body.checkbox;
-  console.log(checkedItemID);
+  const checkedItemID = req.body.checkbox; 
+  console.log(checkedItemID); 
   Item.findByIdAndRemove(checkedItemID, function (err) {
-    if (!err) {
-      console.log("successfully deleted");
-      res.redirect("/");
+    if (!err) { //아까 선언한 함수에서 에러가 아니면
+      console.log("successfully deleted"); //찐으로 딜리트됨
+      res.redirect("/");//그리고 다시 원래페이지로 커몬
     }
   });
 });
-
+//워크 페이지로 보낸다 => 보드 제이에스를 브라우어저에 렌더링!
 app.get("/work", function (req, res) {
   res.render("board", { listTitle: "Work List", newListItems: workItems });
 });
-
+//어바웃?페이지가 뭐였더라
 app.get("/about", function (req, res) {
   res.render("about");
 });
